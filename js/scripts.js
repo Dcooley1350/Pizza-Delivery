@@ -36,8 +36,6 @@ Pizza.prototype.display = function (){
   });
 }
 
-
-
 var allToppings = []
 $(document).ready(function(){
   $("form#pizza-survey").submit(function(event) {
