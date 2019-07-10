@@ -8,21 +8,21 @@ function Pizza(size,topping,style) {
 
 Pizza.prototype.price = function() {
   if (this.size = "Bagel Bite") {
-    10 + (this.topping.length * .5)
+    return(10 + (this.topping.length * .5))
   }
   else if (this.size = "small") {
-    15 + (this.topping.length * .75)
+    return(15 + (this.topping.length * .75))
   }
   else if (this.size = "medium") {
-    20 + (this.topping.length *  1)
+    return(20 + (this.topping.length *  1))
   }
   else if (this.size = "large") {
-    25 + (this.topping.length * 1.5)
+    return(25 + (this.topping.length * 1.5))
   }
   else if (this.size = "F*$% ME UP FAM") {
-    30 + (this.topping.length * 2)
+    return(30 + (this.topping.length * 2))
   }
-}
+};
 
 
 
@@ -35,9 +35,10 @@ Pizza.prototype.price = function() {
 
 
 // USER INTERFACE LOGIC
-
+var toppings = []
 $(document).ready(function(){
   $("form#pizza-survey").submit(function(event) {
+    event.preventDefault();
     var size = $("#size").val();
     var style = $("#style").val();;
     $("input:checkbox[name=meat-toppings]:checked").each(function(){
@@ -48,5 +49,8 @@ $(document).ready(function(){
       var veggieToppings = $(this).val();
       toppings.push(veggieToppings);
     });
+    var newPizza = new Pizza(size, toppings, style)
+    console.log(newPizza)
+    console.log("made it here!")
   });
 });
