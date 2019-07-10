@@ -1,7 +1,7 @@
 // BUSINESS LOGIC
 
 function Pizza(size,topping,style) {
-  this.sizes = size;
+  this.size = size;
   this.topping = topping;
   this.style = style;
 } 
@@ -29,12 +29,8 @@ Pizza.prototype.price = function() {
 
 
 
-
-
-
-
-
 // USER INTERFACE LOGIC
+
 var toppings = []
 $(document).ready(function(){
   $("form#pizza-survey").submit(function(event) {
@@ -50,7 +46,10 @@ $(document).ready(function(){
       toppings.push(veggieToppings);
     });
     var newPizza = new Pizza(size, toppings, style)
-    console.log(newPizza)
-    console.log("made it here!")
+    newPizza.price()
+    var totalPrice = (newPizza.price() +5)
+
+
+
   });
 });
