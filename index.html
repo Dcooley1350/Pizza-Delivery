@@ -16,25 +16,29 @@
       <div class="panel panel-default">
         <div class="panel-title"> Toppings:</div>
         <div class="panel-body">
-          <form id="toppings-survey">
+          <form id="pizza-survey">
             <div class="form-group">
               <h2>Meaty Meats:</h2>
               <input type="checkbox" name="selected-toppings" value="sausage"> Sausage<br>
               <input type="checkbox" name="selected-toppings" value="pepperoni"> Pepperoni<br>
               <input type="checkbox" name="selected-toppings" value="chicken"> Chicken<br>
+              <input type="checkbox" name="selected-toppings" value="Bacon"> Bacon<br>
               <input type="checkbox" name="selected-toppings" value="Horse"> Horse<br>
             </div>
+            <h2>SIZE MATTERS:</h2>
+            <select class="form-control" id="size">
+              <option>Bagel Bite</option>
+              <option>Small</option>
+              <option>Medium</option>
+              <option>Large</option>
+              <option>Extra Large</option>
+              <option>F*$% ME UP FAM</option>
+            </select>
+            <button type="submit">Place Order!</button>
           </form>
-
         </div>
       </div>
-      <div class="panel panel-default">
-        <div class="panel-title">Size:</div>
-        <div class="panel-body">
-
-        </div>
-      </div>
-      <div class="user-orders">
+      <div id="user-orders">
         <div class="panel panel-default">
           <div class="panel-title">Your Lowsy Order:</div>
           <div class="panel-body">
