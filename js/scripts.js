@@ -1,6 +1,6 @@
 // BUSINESS LOGIC
 
-
+function Pizza(size, toppings, style)
 
 
 
@@ -15,3 +15,4 @@
 
 
 var size = $("#size").val();
+var style = $("#style").val();
