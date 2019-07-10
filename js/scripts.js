@@ -1,10 +1,29 @@
 // BUSINESS LOGIC
 
-function Pizza(size, toppings, style) {
-  this.size = size;
-  this.toppings = toppings;
+function Pizza(size,topping,style) {
+  this.sizes = size;
+  this.topping = topping;
   this.style = style;
+} 
+
+Pizza.prototype.price = function() {
+  if (this.size = "Bagel Bite") {
+    10 + (this.topping.length * .5)
+  }
+  else if (this.size = "small") {
+    15 + (this.topping.length * .75)
+  }
+  else if (this.size = "medium") {
+    20 + (this.topping.length *  1)
+  }
+  else if (this.size = "large") {
+    25 + (this.topping.length * 1.5)
+  }
+  else if (this.size = "F*$% ME UP FAM") {
+    30 + (this.topping.length * 2)
+  }
 }
+
 
 
 
@@ -29,9 +48,5 @@ $(document).ready(function(){
       var veggieToppings = $(this).val();
       toppings.push(veggieToppings);
     });
-    return (size,style)
   });
 });
-console.log(toppings)
-console.log(size)
-console.log(style)
