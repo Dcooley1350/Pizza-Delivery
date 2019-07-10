@@ -1,6 +1,6 @@
 // BUSINESS LOGIC
 
-function Pizza(size,topping,style) {
+function Pizza(size,toppings,style) {
   this.size = size;
   this.toppings = toppings;
   this.style = style;
@@ -27,18 +27,18 @@ Pizza.prototype.price = function() {
 // USER INTERFACE LOGIC
 
 Pizza.prototype.display = function (){
-newPizza.price() = $("#pizza-price")
-(newPizza.price() + 5) = $("#pizza-total-price")
-this.size = $("#pizza-size")
-this.style = $("#pizza-style")
-this.toppings.foreach(function(topping) {
-  $("#pizza-toppings").append("<li>" + topping + "</li>")
-  })
+  $("#pizza-price").text(this.price())
+  $("#pizza-total-price").text(this.price() + 5)
+  $("#pizza-size").text(this.size)
+  $("#pizza-style").text(this.style)
+  this.toppings.forEach(function(topping) {
+    $("#pizza-toppings").append("<li>" + topping + "</li>")
+  });
 }
 
 
 
-var toppings = []
+var allToppings = []
 $(document).ready(function(){
   $("form#pizza-survey").submit(function(event) {
     event.preventDefault();
@@ -46,15 +46,15 @@ $(document).ready(function(){
     var style = $("#style").val();;
     $("input:checkbox[name=meat-toppings]:checked").each(function(){
       var meatToppings = $(this).val();
-      toppings.push(meatToppings);
+      allToppings.push(meatToppings);
     });
     $("input:checkbox[name=veggie-toppings]:checked").each(function(){
       var veggieToppings = $(this).val();
-      toppings.push(veggieToppings);
+      allToppings.push(veggieToppings);
     });
-    var newPizza = new Pizza(size, toppings, style)
+    var newPizza = new Pizza(size, allToppings, style)
+   
     newPizza.display()
-    $("#user-orders").show()
-
+    $("#user-orders").show();
   });
 });
