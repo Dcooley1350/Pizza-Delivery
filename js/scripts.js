@@ -2,34 +2,41 @@
 
 function Pizza(size,topping,style) {
   this.size = size;
-  this.topping = topping;
+  this.toppings = toppings;
   this.style = style;
 } 
 
 Pizza.prototype.price = function() {
   if (this.size = "Bagel Bite") {
-    return(10 + (this.topping.length * .5))
+    return(10 + (this.toppings.length * .5))
   }
   else if (this.size = "small") {
-    return(15 + (this.topping.length * .75))
+    return(15 + (this.toppings.length * .75))
   }
   else if (this.size = "medium") {
-    return(20 + (this.topping.length *  1))
+    return(20 + (this.toppings.length *  1))
   }
   else if (this.size = "large") {
-    return(25 + (this.topping.length * 1.5))
+    return(25 + (this.toppings.length * 1.5))
   }
   else if (this.size = "F*$% ME UP FAM") {
-    return(30 + (this.topping.length * 2))
+    return(30 + (this.toppings.length * 2))
   }
 };
 
-
-
-
-
-
 // USER INTERFACE LOGIC
+
+Pizza.prototype.display = function (){
+newPizza.price() = $("#pizza-price")
+(newPizza.price() + 5) = $("#pizza-total-price")
+this.size = $("#pizza-size")
+this.style = $("#pizza-style")
+this.toppings.foreach(function(topping) {
+  $("#pizza-toppings").append("<li>" + topping + "</li>")
+  })
+}
+
+
 
 var toppings = []
 $(document).ready(function(){
@@ -46,10 +53,8 @@ $(document).ready(function(){
       toppings.push(veggieToppings);
     });
     var newPizza = new Pizza(size, toppings, style)
-    newPizza.price()
-    var totalPrice = (newPizza.price() +5)
-
-
+    newPizza.display()
+    $("#user-orders").show()
 
   });
 });
