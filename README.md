@@ -15,9 +15,15 @@ _This web application will allow users to design a pizza for delivery. Users wil
 ### _Users will be able to select multiple toppings._
 * Example Input: [Pepperoni, Jalepenos, Mushrooms]
 * Example Output: ["You have selected a pizza topped with Pepperoni, Jalepenos, and Mushrooms."]
-### _If the user selects pineapple as a topping, the application will educate the user._
-* Example Input: [Pepperoni, Jalepenos, Mushrooms, Pineapple]
-* Example Output: [Pineapple doesn't belong on pizza, please select another topping]
+### _Users will be able to select a style of pizza._
+* Example Input: ["Chicago"]
+* Example Output: [You have selected a Chicago style pizza.]
+### _The application will compile all user input and return a receipt._
+* Example Input: [medium,(peperoni,peppers, pineapple),Chicago"]
+* Example Output: [You have selected a medium, Chicago style pizza topped with pepperoni, peppers, and pineapple.]
+### _The application will calculate a price based on size and toppings._
+* Example Input: [medium,(peperoni,peppers, pineapple),Chicago"]
+* Example Output: [You have selected a medium, Chicago style pizza topped with pepperoni, peppers, and pineapple. Your total will be $16.95]
 
 ## Setup/Installation Requirements
 
